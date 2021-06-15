@@ -21,6 +21,6 @@ steps:
     location: 'West Europe'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/Lupipa/azureTestLab/prod/CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName AzureTestLab'
+    overrideParameters: '-projectName AzureTL'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
