@@ -13,12 +13,12 @@ if ($deploymentScope -eq "ResourceGroup") {
     }
 }
 
-#Chech if storage account already exist
+#Chech if storage account already exists
 $StorageAccountName = 'azlpsatl'
 
 $StorageAccount = (Get-AzStorageAccount | Where-Object { $_.StorageAccountName -eq $StorageAccountName })
 
-# Create the storage account if it doesn't already exist
+# Create the storage account if it doesn't already exists
 if ($StorageAccount -eq $null) {
     if ((Get-AzResourceGroup -Name $ResourceGroupName -Verbose -ErrorAction SilentlyContinue) -eq $null) {
         New-AzResourceGroup -Name $ResourceGroupName -Location $Location -Verbose -Force -ErrorAction Stop
