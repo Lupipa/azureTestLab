@@ -23,5 +23,5 @@ if ($StorageAccount -eq $null) {
     if ((Get-AzResourceGroup -Name $ResourceGroupName -Verbose -ErrorAction SilentlyContinue) -eq $null) {
         New-AzResourceGroup -Name $ResourceGroupName -Location $Location -Verbose -Force -ErrorAction Stop
     }
-    ew-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -TemplateFile '../templates/azuredeploy.json' -TemplateParameterFile '../templates/azuredeploy.parameters.json'
+    $StorageAccount = New-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -TemplateFile '../templates/azuredeploy.json' -TemplateParameterFile '../templates/azuredeploy.parameters.json'
 }
